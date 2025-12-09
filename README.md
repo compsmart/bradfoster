@@ -2,6 +2,8 @@
 
 A modern, interactive portfolio website featuring an AI-powered talking avatar that can answer questions about my professional experience, skills, and personal interests in real-time using voice conversation.
 
+### 🌐 [Live Demo → bradfoster.co.uk](https://bradfoster.co.uk)
+
 ![React](https://img.shields.io/badge/React-19-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue)
 ![Gemini](https://img.shields.io/badge/Gemini-Live_API-orange)
