@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="inner" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="glow-filter">
+      <feGaussianBlur stdDeviation="0.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Dark background with subtle rounded corners -->
+  <rect width="32" height="32" rx="6" fill="#111827"/>
+  
+  <!-- Abstract geometric B shape - left side -->
+  <path d="M7 6 L7 26 L13 26 L13 17 L16 17 C19 17 21 15 21 12 C21 9 19 6 16 6 Z M13 11 L15 11 C16.5 11 17 11.8 17 12.5 C17 13.2 16.5 14 15 14 L13 14 Z" fill="url(#glow)" filter="url(#glow-filter)"/>
+  
+  <!-- Stylized F shape - right side, overlapping -->
+  <path d="M17 15 L17 26 L22 26 L22 21 L26 21 L26 17 L22 17 L22 15 L26 15 L26 11 L17 11 Z" fill="url(#inner)" opacity="0.9"/>
+  
+  <!-- Accent dot/node - like a circuit point -->
+  <circle cx="26" cy="7" r="2.5" fill="#22d3ee">
+    <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Connecting line - tech/circuit aesthetic -->
+  <path d="M24 7 L22 7 L22 9" stroke="#22d3ee" stroke-width="1" fill="none" opacity="0.6"/>
+</svg>
+
