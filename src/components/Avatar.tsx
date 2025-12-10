@@ -96,7 +96,7 @@ const FACE_CONFIG = {
   rightEyeX: 282,     // Horizontal pos of right eye center
   eyeWidth: 17,       // Horizontal radius (narrower)
   eyeHeight: 15,      // Vertical radius (height)
-  mouthY: 238,        // Vertical center of the mouth
+  mouthY: 235,        // Vertical center of the mouth
   mouthX: 245,        // Horizontal center of the mouth
   maxMouthHeight: 65, // How wide it opens vertically
   mouthWidth: 50      // How wide it is horizontally
@@ -743,6 +743,18 @@ export const Avatar: React.FC<AvatarProps> = ({ analyser, isListening, className
         src="/images/brad.png" 
         alt="Avatar Base" 
         className="absolute top-0 left-0 w-full h-full object-cover z-10"
+      />
+      {/* Static mouth image - shown when not connected to Gemini */}
+      <img 
+        src="/images/mouth.png" 
+        alt="Mouth" 
+        className={`absolute z-[25] transition-opacity duration-300 ${isListening ? 'opacity-0' : 'opacity-100'}`}
+        style={{ 
+          left: FACE_CONFIG.mouthX - 35, 
+          top: FACE_CONFIG.mouthY - 7,
+          width: 70,
+          height: 25
+        }}
       />
       <canvas 
         ref={canvasRef} 
