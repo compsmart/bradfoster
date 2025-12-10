@@ -25,7 +25,7 @@ function App() {
   const [showImageGen, setShowImageGen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100 font-sans selection:bg-cyan-500 selection:text-white">
+    <div className="min-h-screen bg-gray-900 text-gray-100 font-sans selection:bg-cyan-500 selection:text-white overflow-x-hidden">
       
       {/* Navbar */}
       <nav className="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
@@ -36,16 +36,16 @@ function App() {
                 Brad Foster
               </span>
             </div>
-            <div className="flex space-x-4 items-center">
+            <div className="flex space-x-2 sm:space-x-4 items-center">
                <a href="#experience" className="hover:text-cyan-400 transition hidden md:block">Experience</a>
                <a href="#skills" className="hover:text-cyan-400 transition hidden md:block">Skills</a>
                <a href="#projects" className="hover:text-cyan-400 transition hidden md:block">Projects</a>
-               
-          
 
-               <button 
+
+
+               <button
                  onClick={() => setShowPdfModal(true)}
-                 className="flex items-center gap-2 px-4 py-2 bg-cyan-600 hover:bg-cyan-700 rounded-full text-sm font-medium transition"
+                 className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-cyan-600 hover:bg-cyan-700 rounded-full text-sm font-medium transition"
                >
                  <Download size={16} />
                  <span className="hidden sm:inline">Download CV</span>
@@ -56,10 +56,10 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-[90vh] flex flex-col lg:flex-row items-center justify-between gap-12">
-        
-        {/* Text Content */}
-        <div className="flex-1 space-y-8 z-10">
+      <section className="pt-24 pb-12 px-4 sm:pt-32 sm:pb-20 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 min-h-[70vh]">
+          {/* Text Content */}
+          <div className="flex-1 space-y-8 z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -109,15 +109,15 @@ function App() {
               </a>
             </div>
           </motion.div>
-        </div>
+          </div>
 
-        {/* AI Avatar */}
-        <div className="flex-1 flex flex-col items-center justify-center relative">
-          <Avatar 
-            analyser={analyser} 
+          {/* AI Avatar */}
+          <div className="flex-1 flex flex-col items-center justify-center relative">
+          <Avatar
+            analyser={analyser}
             isListening={isSpeaking} // Lip sync when AI is speaking
             expression={expression}
-            className="w-[400px] h-[400px] lg:w-[500px] lg:h-[500px]"
+            className="w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]"
           />
           
           <div className="mt-8 flex flex-col items-center gap-4">
@@ -150,6 +150,7 @@ function App() {
             
             {error && <p className="text-red-400 text-sm">{error}</p>}
             {isConnected && <p className="text-green-400 text-sm animate-pulse">● AI Active - Listening...</p>}
+          </div>
           </div>
         </div>
       </section>
