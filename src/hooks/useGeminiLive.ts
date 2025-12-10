@@ -29,7 +29,7 @@ const VALID_EXPRESSIONS: Expression[] = [
 // ===========================================
 // RAG Tool Definitions for CV/Interview Q&A
 // ===========================================
-const ragTools: any[] = [
+let ragTools: any[] = [
   {
     functionDeclarations: [
       {
@@ -410,7 +410,7 @@ EXPRESSIONS: You control a virtual avatar. Use set_expression to show emotions d
 - Use 'confused' when a question is unclear
 Call set_expression naturally throughout the conversation to make it engaging and expressive.
 
-Keep responses conversational and concise. Speak naturally as Brad would in an interview. When giving information from tools, summarize key points rather than reading everything verbatim.`,
+Keep responses conversational and concise. Speak naturally as Brad. When giving information from tools, summarize key points rather than reading everything verbatim.`,
           // Voice configuration
           speechConfig: {
             voiceConfig: {
@@ -445,7 +445,7 @@ Keep responses conversational and concise. Speak naturally as Brad would in an i
                   const expr = fc.args?.expression as Expression;
                   if (expr && VALID_EXPRESSIONS.includes(expr)) {
                     setExpressionWithReset(expr);
-                    result = { success: true, expression: expr };
+                    result = { success: true };
                   } else {
                     result = { error: 'Invalid expression', validExpressions: VALID_EXPRESSIONS };
                   }
@@ -454,7 +454,7 @@ Keep responses conversational and concise. Speak naturally as Brad would in an i
                 }
                 
                 console.log(`   Result:`, result);
-                
+                functionResponses
                 functionResponses.push({
                   id: fc.id,
                   name: fc.name,
