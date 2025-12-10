@@ -445,7 +445,7 @@ Keep responses conversational and concise. Speak naturally as Brad. When giving 
                   const expr = fc.args?.expression as Expression;
                   if (expr && VALID_EXPRESSIONS.includes(expr)) {
                     setExpressionWithReset(expr);
-                    result = { success: true };
+                    result = { response: "ok" };
                   } else {
                     result = { error: 'Invalid expression', validExpressions: VALID_EXPRESSIONS };
                   }
@@ -458,7 +458,8 @@ Keep responses conversational and concise. Speak naturally as Brad. When giving 
                 functionResponses.push({
                   id: fc.id,
                   name: fc.name,
-                  response: { result }
+                  response: { result },
+                  scheduling:"SILENT"
                 });
               }
               
