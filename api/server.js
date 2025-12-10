@@ -10,8 +10,8 @@ const PORT = process.env.PORT || 8889;
 
 // CORS configuration
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:3000'],
-  methods: ['POST', 'OPTIONS'],
+  origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:3000', 'https://www.bradfoster.co.uk'],
+  methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type'],
 }));
 

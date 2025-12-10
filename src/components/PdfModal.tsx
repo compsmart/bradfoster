@@ -9,7 +9,7 @@ interface PdfModalProps {
   data: ResumeData;
 }
 
-const API_URL = import.meta.env.DEV ? 'http://127.0.0.1:8889' : '';
+const API_URL = '/api';
 
 export const PdfModal: React.FC<PdfModalProps> = ({ isOpen, onClose, data }) => {
   const [company, setCompany] = useState('');

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Avatar } from './components/Avatar';
 import { ProjectShowcase } from './components/ProjectShowcase';

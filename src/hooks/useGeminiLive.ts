@@ -3,7 +3,7 @@ import { GoogleGenAI, Modality } from '@google/genai';
 import { resumeData } from '../data/resume';
 
 // Backend endpoint for ephemeral tokens (keeps API key secure on server)
-const TOKEN_ENDPOINT = import.meta.env.VITE_TOKEN_ENDPOINT || 'http://127.0.0.1:8889/get-ephemeral-token';
+const TOKEN_ENDPOINT = import.meta.env.VITE_TOKEN_ENDPOINT || '/api/get-ephemeral-token';
 const MODEL = "gemini-2.5-flash-native-audio-preview-09-2025";
 
 // ===========================================
